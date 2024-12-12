@@ -1,0 +1,71 @@
+.wheel-draw {
+    text-align: center;
+    margin-top: 30px;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .wheel-draw h2 {
+    font-size: 3rem;
+    color: #333;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .wheel-draw p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 20px;
+  }
+  
+  .input-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .input-container input {
+    padding: 10px;
+    font-size: 1rem;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    width: 250px;
+    text-align: center;
+  }
+  
+  .winner h3 {
+    font-size: 2rem;
+    color: #27ae60;
+    margin-top: 20px;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  @keyframes confetti {
+    0% {
+      transform: translateY(0) rotate(0);
+    }
+    100% {
+      transform: translateY(100vh) rotate(720deg);
+    }
+  }
+  
+  .confetti-piece {
+    position: absolute;
+    width: 12px;
+    height: 18px;
+    background-color: #fff;
+    opacity: 0.8;
+    transform-origin: top;
+    animation: confetti 5s ease-out forwards;
+    clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+  }
+  
+  .confetti-piece:nth-child(1) { background-color: #e74c3c; }
+  .confetti-piece:nth-child(2) { background-color: #2ecc71; }
+  .confetti-piece:nth-child(3) { background-color: #3498db; }
+  .confetti-piece:nth-child(4) { background-color: #f1c40f; }
+  .confetti-piece:nth-child(5) { background-color: #9b59b6; }
+  .confetti-piece:nth-child(6) { background-color: #16a085; }
+  .confetti-piece:nth-child(7) { background-color: #8e44ad; }
+  .confetti-piece:nth-child(8) { background-color: #34495e; }
+  .confetti-piece:nth-child(9) { background-color: #e67e22; }
+  .confetti-piece:nth-child(10) { background-color: #95a5a6; }
+  
