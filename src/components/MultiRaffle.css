@@ -1,0 +1,121 @@
+body {
+    background: linear-gradient(to right, #6a11cb, #2575fc); /* Eğlenceli bir renk geçişi */
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .multi-raffle-container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    text-align: center;
+  }
+  
+  .multi-raffle-container h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #ffe700; /* Altın tonları */
+    text-shadow: 0 0 10px #ffe700, 0 0 20px #ffe700;
+  }
+  
+  .multi-raffle-container p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+  }
+  
+  .raffle-settings {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .raffle-settings label {
+    font-size: 1rem;
+    color: #fff;
+  }
+  
+  .raffle-settings input[type="number"],
+  .raffle-settings input[type="checkbox"] {
+    margin-left: 10px;
+  }
+  
+  .raffle-controls {
+    margin-bottom: 20px;
+  }
+  
+  .raffle-controls input[type="text"] {
+    padding: 10px;
+    font-size: 1rem;
+    border: 2px solid #ffe700;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    outline: none;
+    margin-right: 10px;
+  }
+  
+  .raffle-controls input[type="text"]::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+  }
+  
+  .raffle-controls input[type="file"] {
+    font-size: 0.9rem;
+    color: #fff;
+    margin-top: 10px;
+  }
+  
+  .raffle-controls button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #fff;
+    background: #ffe700;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .raffle-controls button:hover {
+    background: #ffc400;
+    transform: scale(1.05);
+  }
+  
+  .participant-list {
+    margin-top: 20px;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    border-radius: 5px;
+    max-height: 200px;
+    overflow-y: auto;
+    text-align: left;
+  }
+  
+  .participant-list h3 {
+    font-size: 1.2rem;
+    color: #ffe700;
+    margin-bottom: 10px;
+  }
+  
+  .participant-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .participant-list li {
+    font-size: 1rem;
+    margin-bottom: 5px;
+    color: #fff;
+  }
+  
+  .file-error {
+    color: #ff4c4c;
+    font-size: 0.9rem;
+  }
+  

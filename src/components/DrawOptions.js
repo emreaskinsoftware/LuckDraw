@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function DrawOptions({ handleWheelClick }) {
   return (
@@ -6,9 +7,11 @@ function DrawOptions({ handleWheelClick }) {
       <button className="btn primary" onClick={handleWheelClick}>
         Çarklı Çekiliş
       </button>
-      <button className="btn" disabled>
-        Çok Seçenekli Çekiliş (Yakında)
-      </button>
+      <Link to="/multi" style={{ textDecoration: 'none' }}>
+        <button className="btn">
+          Çok Seçenekli Çekiliş
+        </button>
+      </Link>
     </div>
   );
 }

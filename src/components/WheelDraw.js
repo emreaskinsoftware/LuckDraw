@@ -1,16 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import './WheelDraw.css';
 import { Wheel } from 'react-custom-roulette';
 
-function WheelDraw() {
+function WheelDraw({ onBack }) {
   const [participants, setParticipants] = useState([]);
   const [nameInput, setNameInput] = useState('');
-  const [isReady, setIsReady] = useState(false);
   const [winner, setWinner] = useState('');
   const [mustSpin, setMustSpin] = useState(false);
   const [prizeNumber, setPrizeNumber] = useState(0);
 
-  const data = participants.map(name => ({ option: name }));
+  const data = participants.map((name) => ({ option: name }));
 
   const handleAddParticipant = () => {
     if (participants.length >= 12) {
@@ -25,15 +24,12 @@ function WheelDraw() {
     setNameInput('');
   };
 
-  const handleReady = () => {
+  const handleSpinClick = () => {
     if (participants.length === 0) {
-      alert('En az bir kişi eklemelisiniz.');
+      alert('Çevirmek için önce en az bir isim ekleyin.');
       return;
     }
-    setIsReady(true);
-  };
-
-  const handleSpinClick = () => {
+    setWinner(''); // Yeni spin öncesi eski kazananı temizle
     const randomIndex = Math.floor(Math.random() * participants.length);
     setPrizeNumber(randomIndex);
     setMustSpin(true);
@@ -46,50 +42,64 @@ function WheelDraw() {
 
   return (
     <div className="wheel-draw">
-      <h2>Çarklı Çekiliş</h2>
-      <p>Şansını dene ve kazananı belirle!</p>
+      <h2>Siber Şans Çarkı</h2>
+      <p>O şanslı olanı görelim!</p>
 
-      {!isReady ? (
-        <div className="input-container">
-          <input
-            type="text"
-            value={nameInput}
-            onChange={(e) => setNameInput(e.target.value)}
-            placeholder="İsim ekle"
-            onKeyDown={(e) => {
-              if (e.key === 'Enter') handleAddParticipant();
-            }}
-          />
-          <button onClick={handleAddParticipant} className="btn secondary" style={{ marginTop: '10px' }}>
+      <div className="input-container">
+        <input
+          type="text"
+          value={nameInput}
+          onChange={(e) => setNameInput(e.target.value)}
+          placeholder="İsim ekle"
+          onKeyDown={(e) => {
+            if (e.key === 'Enter') handleAddParticipant();
+          }}
+        />
+        <div className="input-buttons">
+          <button onClick={handleAddParticipant} className="btn neon-add">
             Ekle
           </button>
-          <ul className="participants-list" style={{ marginTop: '20px', listStyle: 'none', padding: 0 }}>
-            {participants.map((name, index) => (
-              <li key={index} style={{ marginBottom: '5px' }}>{name}</li>
-            ))}
-          </ul>
-          <button onClick={handleReady} className="btn primary" style={{ marginTop: '20px' }}>
-            Tamam
+          <button onClick={onBack} className="btn neon-back">
+            Geri Dön
           </button>
         </div>
-      ) : (
-        <div>
-          <Wheel
-            mustStartSpinning={mustSpin}
-            prizeNumber={prizeNumber}
-            data={data}
-            backgroundColors={['#e67e22', '#2ecc71']}
-            textColors={['#fff']}
-            onStopSpinning={onStopSpinning}
-          />
-          <button onClick={handleSpinClick} className="btn primary" style={{ marginTop: '20px' }}>
-            Çevir!
-          </button>
-        </div>
-      )}
+      </div>
+
+      <div className="futuristic-wheel-container">
+        {data.length > 0 ? (
+          <>
+            <Wheel
+              mustStartSpinning={mustSpin}
+              prizeNumber={prizeNumber}
+              data={data}
+              backgroundColors={[
+                '#0ff',
+                '#f0f',
+                '#ff0',
+                '#2ecc71',
+                '#e67e22',
+                '#3498db',
+              ]}
+              textColors={['#000']}
+              onStopSpinning={onStopSpinning}
+              outerBorderColor="#222"
+              outerBorderWidth={6}
+              innerRadius={10}
+              radiusLineColor="#555"
+              radiusLineWidth={2}
+              fontSize={16}
+            />
+            <button onClick={handleSpinClick} className="btn neon-spin">
+              Çevir!
+            </button>
+          </>
+        ) : (
+          <p className="no-participants">Lütfen en az bir isim ekleyin.</p>
+        )}
+      </div>
 
       {winner && (
-        <div className="winner">
+        <div className="winner neon-text">
           <h3>Kazanan: {winner} 🎉</h3>
         </div>
       )}
