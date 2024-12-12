@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './MultiRaffle.css'; // CSS dosyasını bağlayalım
+import './MultiRaffle.css';
 
 function MultiRaffle() {
   const [participantList, setParticipantList] = useState([]); // Katılımcılar
@@ -55,7 +55,7 @@ function MultiRaffle() {
           />
         </label>
         <label>
-          Aynı isim birden fazla kez kazanabilir:
+          İsmin Tekrar Edilebilirliği:
           <input
             type="checkbox"
             checked={repeatAllowed}
