@@ -3,6 +3,7 @@ import './MultiRaffle.css';
 import Confetti from 'react-confetti';
 
 function MultiRaffle() {
+  // State definitions for managing raffle logic
   const [participantList, setParticipantList] = useState([]);
   const [nameInput, setNameInput] = useState('');
   const [winnerCount, setWinnerCount] = useState(1);
@@ -15,9 +16,11 @@ function MultiRaffle() {
   const [awaitNext, setAwaitNext] = useState(false);
   const [confettiDone, setConfettiDone] = useState(false);
 
+  // Filter participants if repeat is not allowed
   const filterParticipants = (names) =>
     repeatAllowed ? names : [...new Set(names)];
 
+  // Handle adding a new participant
   const handleAddParticipant = () => {
     const trimmedName = nameInput.trim();
     if (!trimmedName || (!repeatAllowed && participantList.includes(trimmedName))) {
@@ -28,6 +31,7 @@ function MultiRaffle() {
     setNameInput('');
   };
 
+  // Handle file upload for participants
   const handleFileUpload = (e) => {
     const file = e.target.files[0];
     if (!file || !file.name.endsWith('.txt')) {
@@ -47,12 +51,14 @@ function MultiRaffle() {
     reader.readAsText(file);
   };
 
+  // Update participants list when repeatAllowed changes
   useEffect(() => {
     if (!repeatAllowed) {
       setParticipantList(filterParticipants(participantList));
     }
   }, [repeatAllowed]);
 
+  // Start the raffle
   const startRaffle = () => {
     if (
       participantList.length === 0 ||
@@ -66,6 +72,7 @@ function MultiRaffle() {
     setCountdown(5);
   };
 
+  // Handle countdown timer
   useEffect(() => {
     if (countdown > 0) {
       const timer = setTimeout(() => setCountdown(countdown - 1), 1000);
@@ -76,6 +83,7 @@ function MultiRaffle() {
     }
   }, [countdown, raffleActive, awaitNext]);
 
+  // Select the next winner
   const pickNextWinner = () => {
     const remainingParticipants = repeatAllowed
       ? participantList
@@ -103,11 +111,13 @@ function MultiRaffle() {
     }, 3000);
   };
 
+  // Proceed to the next winner
   const handleNext = () => {
     setCountdown(5);
     setAwaitNext(false);
   };
 
+  // Reset the raffle
   const closeRaffle = () => {
     setParticipantList([]);
     setWinners([]);

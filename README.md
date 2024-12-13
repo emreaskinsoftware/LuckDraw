@@ -1,70 +1,68 @@
-# Getting Started with Create React App
+# Lottery Website 🎯
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**Lottery Website** is an interactive web application offering multiple lottery drawing modes, including a spinning wheel and multi-option raffles. Experience the thrill of winning with an engaging and dynamic interface!
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🚀 Features
+- **Spinning Wheel Draw:** Add participants and spin the wheel to select a lucky winner!
+- **Multi-Option Raffle:** Create a participant list, set the number of winners, and let the system choose randomly.
+- **Participant Management:** Add names manually or upload from a `.txt` file.
+- **Real-Time Animations:** Enjoy confetti effects, winner announcements, and exciting countdowns.
+- **Responsive Design:** Works seamlessly on desktops, tablets, and mobile devices.
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 🛠️ Technologies Used
+- **React.js:** Frontend development framework.
+- **React Router:** Navigation and routing.
+- **React Custom Roulette:** Spinning wheel functionality.
+- **CSS Animations:** Custom styles and transitions.
+- **Confetti Effects:** Celebration effects for winner announcements.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## 📸 Screenshots
+![alt text](image.png)
+![alt text](image-1.png)
+![alt text](image-2.png)  
+![alt text](image-3.png)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## ⚙️ Installation & Setup
+Follow these steps to run the project locally:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. **Clone the Repository:**
+   ```bash
+   git clone https://github.com/username/lottery-website.git
+   cd lottery-website
+2. **Install Dependencies:**
+npm install
+3. **Run the Development Server:**
+npm start
+4. **Open the Application:**
+Navigate to http://localhost:3000 in your browser.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+**📋 How to Use**
+Spinning Wheel Draw
+Click the Spinning Wheel Draw button on the homepage.
+Enter participant names manually or upload from a .txt file.
+Click Spin! to start the draw and see the winner.
+Multi-Option Raffle
+Click the Multi-Option Raffle button on the homepage.
+Add participant names and set the number of winners.
+Click Start Raffle to begin the draw and celebrate with confetti!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**💻 Contributing**
+We welcome contributions from the community. Feel free to:
 
-### `npm run eject`
+Submit a Pull Request
+Open an Issue
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+**📜 License**
+This project is licensed under the MIT License. See the LICENSE file for more details.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+**👨‍💻 Author**
+Developed by Emre Aşkın
+Feel free to connect on LinkedIn or view more projects on GitHub.

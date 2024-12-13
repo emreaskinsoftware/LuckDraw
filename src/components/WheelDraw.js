@@ -1,43 +1,49 @@
-import React, { useState, useRef } from 'react';
+// Importing necessary React features and styles
+import React, { useState } from 'react';
 import './WheelDraw.css';
 import { Wheel } from 'react-custom-roulette';
 
 function WheelDraw({ onBack }) {
+  // State management for participants and input values
   const [participants, setParticipants] = useState([]);
   const [nameInput, setNameInput] = useState('');
   const [winner, setWinner] = useState('');
   const [mustSpin, setMustSpin] = useState(false);
   const [prizeNumber, setPrizeNumber] = useState(0);
 
+  // Create wheel data from participant names
   const data = participants.map((name) => ({ option: name }));
 
+  // Add participant to the list
   const handleAddParticipant = () => {
     if (participants.length >= 12) {
-      alert('En fazla 12 kişi ekleyebilirsiniz.');
+      alert('En fazla 12 kişi ekleyebilirsiniz.'); // Maximum limit alert
       return;
     }
     if (!nameInput.trim()) {
-      alert('Lütfen bir isim girin.');
+      alert('Lütfen bir isim girin.'); // Input validation alert
       return;
     }
     setParticipants([...participants, nameInput.trim()]);
     setNameInput('');
   };
 
+  // Handle wheel spin
   const handleSpinClick = () => {
     if (participants.length === 0) {
-      alert('Çevirmek için önce en az bir isim ekleyin.');
+      alert('Çevirmek için önce en az bir isim ekleyin.'); // Ensure there are participants
       return;
     }
-    setWinner(''); // Yeni spin öncesi eski kazananı temizle
+    setWinner(''); // Clear previous winner
     const randomIndex = Math.floor(Math.random() * participants.length);
-    setPrizeNumber(randomIndex);
-    setMustSpin(true);
+    setPrizeNumber(randomIndex); // Set random winner
+    setMustSpin(true); // Start spinning
   };
 
+  // Triggered when wheel stops spinning
   const onStopSpinning = () => {
-    setMustSpin(false);
-    setWinner(participants[prizeNumber]);
+    setMustSpin(false); // Stop spinning
+    setWinner(participants[prizeNumber]); // Set the winner
   };
 
   return (
@@ -45,6 +51,7 @@ function WheelDraw({ onBack }) {
       <h2>Siber Şans Çarkı</h2>
       <p>O şanslı olanı görelim!</p>
 
+      {/* Input section for adding participants */}
       <div className="input-container">
         <input
           type="text"
@@ -52,7 +59,7 @@ function WheelDraw({ onBack }) {
           onChange={(e) => setNameInput(e.target.value)}
           placeholder="İsim ekle"
           onKeyDown={(e) => {
-            if (e.key === 'Enter') handleAddParticipant();
+            if (e.key === 'Enter') handleAddParticipant(); // Add participant on Enter key
           }}
         />
         <div className="input-buttons">
@@ -65,6 +72,7 @@ function WheelDraw({ onBack }) {
         </div>
       </div>
 
+      {/* Wheel Display */}
       <div className="futuristic-wheel-container">
         {data.length > 0 ? (
           <>
@@ -94,10 +102,11 @@ function WheelDraw({ onBack }) {
             </button>
           </>
         ) : (
-          <p className="no-participants">Lütfen en az bir isim ekleyin.</p>
+          <p className="no-participants">Lütfen en az bir isim ekleyin.</p> 
         )}
       </div>
 
+      {/* Winner Announcement */}
       {winner && (
         <div className="winner neon-text">
           <h3>Kazanan: {winner} 🎉</h3>

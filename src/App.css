@@ -1,23 +1,27 @@
+/* Global Reset & Box Sizing */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Body Styling */
 body {
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(120deg, #f6f7f9, #cfd9df);
-  color: #333;
+  background: linear-gradient(120deg, #f6f7f9, #cfd9df); /* Light gradient background */
+  color: #333; /* Default text color */
   min-height: 100vh;
   margin: 0;
 }
 
+/* Main App Container */
 .App {
   width: 100%;
   padding: 20px;
   text-align: center;
 }
 
+/* Header Section */
 .header {
   margin-bottom: 30px;
   animation: fadeInDown 1.5s ease-in-out;
@@ -26,16 +30,17 @@ body {
 .header h1 {
   font-size: 3.5rem;
   letter-spacing: 2px;
-  color: #4a4a4a;
-  text-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  color: #4a4a4a; /* Dark text color for contrast */
+  text-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for text */
 }
 
 .header p {
   font-size: 1.2rem;
   margin-top: 10px;
-  color: #5a5a5a;
+  color: #5a5a5a; /* Lighter gray for description */
 }
 
+/* Draw Options Layout */
 .draw-options {
   display: flex;
   gap: 30px;
@@ -44,37 +49,40 @@ body {
   animation: fadeInUp 1.5s ease-in-out;
 }
 
+/* Button Styling */
 .btn {
   padding: 15px 40px;
   font-size: 1.1rem;
   font-weight: bold;
-  color: white;
+  color: white; /* Button text color */
   border: none;
-  border-radius: 50px;
+  border-radius: 50px; /* Rounded button */
   cursor: pointer;
-  background: linear-gradient(120deg, #2c3e50, #4ca1af);
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(120deg, #2c3e50, #4ca1af); /* Cool gradient */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .btn:hover {
-  transform: translateY(-5px);
-  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+  transform: translateY(-5px); /* Lift effect */
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
 }
 
+/* Primary Button Variant */
 .btn.primary {
-  background: linear-gradient(120deg, #e67e22, #f39c12);
+  background: linear-gradient(120deg, #e67e22, #f39c12); /* Warm gradient */
 }
 
 .btn.primary:hover {
   transform: translateY(-5px);
-  box-shadow: 0px 8px 20px rgba(243, 156, 18, 0.5);
+  box-shadow: 0px 8px 20px rgba(243, 156, 18, 0.5); /* Warmer hover shadow */
 }
 
+/* Fade-In Animations */
 @keyframes fadeInDown {
   0% {
     opacity: 0;
-    transform: translateY(-20px);
+    transform: translateY(-20px); /* Slide from top */
   }
   100% {
     opacity: 1;
@@ -85,7 +93,7 @@ body {
 @keyframes fadeInUp {
   0% {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(20px); /* Slide from bottom */
   }
   100% {
     opacity: 1;

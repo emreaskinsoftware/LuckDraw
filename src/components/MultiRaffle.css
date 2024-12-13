@@ -1,4 +1,4 @@
-/* Temel Ayarlar */
+/* Base Reset */
 * {
   box-sizing: border-box;
 }
@@ -11,7 +11,7 @@ body {
   padding: 0;
 }
 
-/* Ana Konteyner */
+/* Main Container */
 .multi-raffle-container {
   max-width: 900px;
   margin: 100px auto;
@@ -23,6 +23,7 @@ body {
   backdrop-filter: blur(10px);
 }
 
+/* Titles */
 .multi-raffle-container h2 {
   font-size: 2.8rem;
   margin-bottom: 20px;
@@ -36,7 +37,7 @@ body {
   color: #b0b0b0;
 }
 
-/* Çekiliş Ayarları */
+/* Raffle Settings */
 .raffle-settings {
   display: flex;
   justify-content: space-between;
@@ -56,7 +57,7 @@ body {
   margin-left: 10px;
 }
 
-/* Butonlar ve Giriş Alanları */
+/* Buttons and Input Fields */
 .raffle-controls {
   display: flex;
   gap: 20px;
@@ -81,7 +82,7 @@ body {
   border-color: #00e5ff;
 }
 
-/* Buton Stilleri */
+/* Button Styles */
 .raffle-button {
   padding: 12px 30px;
   font-size: 1.2rem;
@@ -116,7 +117,7 @@ body {
   opacity: 0.9;
 }
 
-/* Katılımcı Listesi */
+/* Participant List */
 .participant-list {
   background: rgba(255, 255, 255, 0.15);
   padding: 25px;
@@ -152,21 +153,7 @@ body {
   font-weight: bold;
 }
 
-/* Bilgilendirme ve Hata Mesajları */
-.file-error {
-  color: #ff1744;
-  font-size: 0.9rem;
-}
-
-.raffle-info {
-  font-size: 1.4rem;
-  font-weight: bold;
-  color: #ffffff;
-  text-shadow: 0 0 8px #00e5ff;
-  margin-bottom: 20px;
-}
-
-/* Geri Sayım Ekranı */
+/* Countdown Screen */
 .countdown-overlay {
   position: fixed;
   top: 0;
@@ -194,7 +181,7 @@ body {
   animation: glow 1s infinite alternate;
 }
 
-/* Kazanan Anonsu */
+/* Winner Announcement */
 .current-winner h3 {
   font-size: 3.5rem;
   color: #00e676;
@@ -225,7 +212,7 @@ body {
   text-shadow: 0 0 8px #00e5ff;
 }
 
-/* Animasyonlar */
+/* Animations */
 @keyframes glow {
   to {
     text-shadow: 0 0 20px #00e5ff, 0 0 40px #00e5ff;
@@ -241,7 +228,7 @@ body {
   }
 }
 
-/* Tablo Stili */
+/* Table Styles */
 table {
   width: 100%;
   border-collapse: collapse;
